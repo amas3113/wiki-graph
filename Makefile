@@ -1,10 +1,10 @@
-CC := g++
+CC := clang++
 
 SRC_DIR := src
 OBJ_DIR := obj
 BIN_DIR := bin
 
-EXE := $(BIN_DIR)/wiki_algs
+EXE := $(BIN_DIR)/wiki_graph
 SRC := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ := $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

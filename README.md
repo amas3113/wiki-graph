@@ -30,7 +30,7 @@ wget -O data/wiki_cats.txt.gz http://snap.stanford.edu/data/wiki-topcats-categor
 gunzip data/wiki*
 ```
 
-Running ```./wiki_algs``` begins the program, where the user is prompted to provide 3 directories for the vertice, edge, and category file respectively. Worth noting is the fact that the category file can be an empty .txt and all but "printCategories" will still function. Once all files are loaded, the user may type "help" for help, and from there on is guided through the rest of the program. This showcases our implementations of BFS, a Landmark path finding algorithm, kosaraju's algorithm, and a cycle detection algorithm.
+Running ```./wiki_graph``` begins the program, where the user is prompted to provide 3 directories for the vertice, edge, and category file respectively. Worth noting is the fact that the category file can be an empty .txt and all but "printCategories" will still function. Once all files are loaded, the user may type "help" for help, and from there on is guided through the rest of the program. This showcases our implementations of BFS, a Landmark path finding algorithm, kosaraju's algorithm, and a cycle detection algorithm.
 
 Final Presentation: https://drive.google.com/drive/folders/1sSPnWzA7zl0-VDAtQEesaEc2jwd_Kn3W?usp=sharing
 
