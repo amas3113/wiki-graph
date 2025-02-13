@@ -1,6 +1,7 @@
-# Final Project : basak4-ctoledo2-ajm22-jcrowe6
-The final project parses graph datasets (with support for vertex naming and categorization) to be used with either a breadth first search or Kosaraju's algorithm. 
-The edge data format is represented as a line of two integers (where each integer represents a vertex) seperated by a space, e.g.
+# CS225 Final Project: wiki-graph
+The final project parses graph datasets (with support for vertex naming and categorization) to be used with either a breadth first search (BFS) or Kosaraju's algorithm.
+
+Edge data is represented as lines of two integers (where each integer represents a vertex) delimited by a space:
 ```
 0 1
 0 25
@@ -8,7 +9,7 @@ The edge data format is represented as a line of two integers (where each intege
 ...
 ```
 
-The vertex name data format is represented as a line consisting of an integer (vertex number) and a string (vertex name)
+Vertex name data is represented as lines consisting of an integer (vertex number) and a string (vertex name):
 ```
 0 Apple
 1 New Zealand
@@ -16,22 +17,29 @@ The vertex name data format is represented as a line consisting of an integer (v
 ...
 ```
 
-The category data format is represented as a line consisting of keyword 'Category:'  
-
-
-Our code can be compiled my simply running ```make```. The data we used were three files named ```wiki_pages.txt```, ```wiki_data.txt``` and ```wiki_categories``` to be placed in the ```data``` directory. These can be acquired by running
+Category data is represented as lines consisting of keyword ```Category:[Category Name];``` followed by all vertex IDs belonging to that category:
 ```
-#wget -O data/wiki_pages.txt.gz http://snap.stanford.edu/data/wiki-topcats-page-names.txt.gz
-#wget -O data/wiki_data.txt.gz http://snap.stanford.edu/data/wiki-topcats.txt.gz
+Category:Fruit; 0 55
+Category:Countries; 1 4124
+Category:Weather_types; 2 15
+...
+```
 
+## Acquiring dataset
+The wikipedia dataset can be acquired from https://snap.stanford.edu/data/wiki-topcats.html:
+```
 wget -O data/wiki_verts.txt.gz http://snap.stanford.edu/data/wiki-topcats-page-names.txt.gz
 wget -O data/wiki_edges.txt.gz http://snap.stanford.edu/data/wiki-topcats.txt.gz
 wget -O data/wiki_cats.txt.gz http://snap.stanford.edu/data/wiki-topcats-categories.txt.gz
 gunzip data/wiki*
 ```
 
-Running ```./wiki_graph``` begins the program, where the user is prompted to provide 3 directories for the vertice, edge, and category file respectively. Worth noting is the fact that the category file can be an empty .txt and all but "printCategories" will still function. Once all files are loaded, the user may type "help" for help, and from there on is guided through the rest of the program. This showcases our implementations of BFS, a Landmark path finding algorithm, kosaraju's algorithm, and a cycle detection algorithm.
+## Building
+wiki-graph can be compiled using ```make```. By default, the executable is stored in a ./bin/ subdirectory.
+
+## Running
+Running ```./bin/wiki_graph``` begins the program, where the user is prompted to provide 3 file paths for the vertex, edge, and category file respectively. Worth noting is the fact that the category file can be an empty .txt and all but "printCategories" will still function. Once all files are loaded, the user may type "help" for information on commands. This showcases our implementations of BFS, a landmark path finding algorithm, Kosaraju's algorithm, and a cycle detection algorithm.
 
 Final Presentation: https://drive.google.com/drive/folders/1sSPnWzA7zl0-VDAtQEesaEc2jwd_Kn3W?usp=sharing
 
-Data Source: http://snap.stanford.edu/data/wiki-topcats.html
+Authors: basak4-ctoledo2-ajm22-jcrowe6
